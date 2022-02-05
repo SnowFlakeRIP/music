@@ -4,9 +4,10 @@ import {TrackController} from './track.controller';
 import {MongooseModule} from "@nestjs/mongoose";
 import {Track, TrackSchema} from "./schemas/track.schema";
 import {Comment, CommentSchema} from "./schemas/comment.schema";
+import {FileService} from "../file/file.service";
 
 @Module({
-    providers: [TrackService],
+    providers: [TrackService,FileService],
     controllers: [TrackController],
     imports: [
         MongooseModule.forFeature([
